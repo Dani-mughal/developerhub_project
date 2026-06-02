@@ -125,7 +125,7 @@ body {
 /* Grids */
 .grid, .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     padding: 4rem 5%;
 }
@@ -186,3 +186,84 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* Tablet 2 columns */
+@media (max-width: 1024px) {
+    .grid, .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; 
+    }
+    .navbar {
+        padding: 1rem 5%;
+    }
+    /* Mobile 1 column */
+    .grid, .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Enhancements & Search */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: var(--light-grey);
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+}
+.search-form input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.stock-status {
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+.in-stock { color: #2e7d32; }
+.out-of-stock { color: #c62828; }
+
+.btn-disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+.btn-disabled:hover { background: #ccc; transform: none; }
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+
+.card, .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 8px;
+    background: white;
+}
+.card:hover, .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.card-info, .info { padding: 1.5rem; text-align: center; }
+.category { font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
+
+.page-header { text-align: center; padding: 4rem 5% 0; }
+.page-header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.no-products { text-align: center; padding: 4rem 5%; grid-column: 1 / -1; }
+
+.footer { text-align: center; padding: 2rem; background: var(--light-grey); margin-top: 4rem; }

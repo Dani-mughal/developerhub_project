@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <a href="/" class="logo" style="text-decoration:none; color:inherit;">LUXE.</a>
+    
+    <div class="nav-middle">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+        </ul>
+    </div>
+    
+    <div class="nav-icons">
+        <form class="search-form" action="/products" method="GET">
+            <input type="text" name="search" placeholder="Search..." value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" />
+            <button type="submit" class="icon-btn">🔍</button>
+        </form>
+    </div>
+</nav>

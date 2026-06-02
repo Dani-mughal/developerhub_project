@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= product.name %> | Premium Store</title>
+    <%- include('partials/header') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <main class="details-container">
+        <div class="details-grid">
+            <div class="main-image">
+                <img src="<%= product.image %>" alt="<%= product.name %>" class="card-img large">
+            </div>
+            <div class="content">
+                <span class="category"><%= product.category %></span>
+                <h1><%= product.name %></h1>
+                <p class="price">$<%= product.price.toFixed(2) %></p>
+                <div class="stock-info">
+                   <p class="stock-status <%= product.stock > 0 ? 'in-stock' : 'out-of-stock' %>">
+                        <%= product.stock > 0 ? 'In Stock' : 'Out of Stock' %>
+                    </p>
+                </div>
+                <div class="description">
+                    <p><%= product.description %></p>
+                </div>
+                <div class="actions">
+                    <% if(product.stock > 0) { %>
+                        <button class="btn">Add to Cart</button>
+                    <% } else { %>
+                        <button class="btn btn-disabled" disabled>Out of Stock</button>
+                    <% } %>
+                    <button class="btn btn-outline">Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    <script src="/js/main.js"></script>
+</body>
+</html>
